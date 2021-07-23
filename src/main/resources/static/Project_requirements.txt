@@ -1,0 +1,74 @@
+
+
+
+[
+
+	{
+		"id":1,
+		"name":"РЕН ТВ",
+		"image":"http://",
+		"price":10,
+		"discounts":[
+			{
+				"min_days":3,
+				"percent":10
+			},
+			{
+				"min_days":7,
+				"percent":20
+			},
+			{
+				"min_days":10,
+				"percent":30
+			}
+		]
+	},
+	{
+		"id":2,
+		"name":"НТС",
+		"image":"http://",
+		"price":11,
+		"discounts":[
+			{
+				"min_days":5,
+				"percent":10
+			},
+			{
+				"min_days":10,
+				"percent":20
+			},
+			{
+				"min_days":20,
+				"percent":40
+			}
+		]
+	}
+]
+
+
+
+{
+	"text":"kdjfks ksjdfsk",
+	"name":"Dolon",
+	"phone":"0555905399",
+	"email":"dolon@mail.ru",
+	"total_price":8276482,
+	"channels":[
+
+		{
+			"channel_id":1,
+			"price":12713
+			"days":[
+				"15.07.2021","16.07.2021","17.07.2021","18.07.2021","20.07.2021","21.07.2021"
+			]
+		},
+		{
+			"channel_id":2,
+			"price":127133
+			"days":[
+				"15.07.2021","16.07.2021","17.07.2021","18.07.2021","20.07.2021","21.07.2021","22.07.2021"
+			]
+		}
+	]
+
+}
