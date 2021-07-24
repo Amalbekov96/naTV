@@ -1,15 +1,23 @@
 package kg.kushtar.natv.Model;
+import lombok.Data;
+
 import javax.persistence.*;
-
+@Data
 @Entity
-@Table(name = "order_details")
 public class OrderDetails {
-    @Id @ManyToOne @JoinColumn(name = "order_id")
-    private Orders order;
 
-    @Id @ManyToOne @JoinColumn(name = "channel_id")
+    @EmbeddedId
+    private OrderDetailsId emID = new OrderDetailsId();
+
+
+    @ManyToOne
+    @MapsId("channelId")
     private Channels channel;
 
-    @Column(name = "PRICE")
+    @ManyToOne
+    @MapsId("orderId")
+    private Orders order;
+
+    @Column(name = "price")
     private double price;
 }

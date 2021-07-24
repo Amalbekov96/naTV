@@ -1,15 +1,12 @@
-package kg.kushtar.natv.Model;
+package kg.kushtar.natv.Model.Dto;
 
+import kg.kushtar.natv.Model.Channels;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
-
 @Data
-@Entity
-public class Prices extends BaseEntity{
-
-    @ManyToOne
+public class PricesDto {
+    private Long id;
     private Channels channel;
     private LocalDateTime startDate;
     private LocalDateTime endDate;

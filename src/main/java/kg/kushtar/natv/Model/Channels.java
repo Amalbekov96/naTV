@@ -7,14 +7,11 @@ import java.util.List;
 
 @Data
 @Entity
-public class Channels {
+public class Channels extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String image;
     private Boolean active;
 
-    @OneToMany(mappedBy = "channels")
+    @OneToMany(mappedBy = "order")
     List<OrderDetails> orders;
 }

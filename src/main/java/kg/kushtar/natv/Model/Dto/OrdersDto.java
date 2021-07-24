@@ -1,17 +1,15 @@
-package kg.kushtar.natv.Model;
-
+package kg.kushtar.natv.Model.Dto;
 
 import kg.kushtar.natv.Model.Enum.Orderstatus;
+import kg.kushtar.natv.Model.OrderDetails;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
-@Entity
-public class Orders extends BaseEntity{
-
+public class OrdersDto {
+    private Long id;
     private String text;
     private String name;
     private String phone;
@@ -20,6 +18,5 @@ public class Orders extends BaseEntity{
     private LocalDateTime addDate;
     private LocalDateTime editDate;
     private Orderstatus status;
-    @OneToMany(mappedBy = "channel")
     List<OrderDetails> channels;
 }
