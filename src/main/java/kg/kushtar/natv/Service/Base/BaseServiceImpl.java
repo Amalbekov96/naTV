@@ -1,11 +1,15 @@
 package kg.kushtar.natv.Service.Base;
 
+import kg.kushtar.natv.Model.BaseEntity;
 import kg.kushtar.natv.Repository.BaseRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public abstract class BaseServiceImpl<E,R extends BaseRepo<E>> implements BaseService<E>{
+public abstract class BaseServiceImpl<E extends BaseEntity,R extends BaseRepo<E>> implements BaseService<E>{
+
     private final R repo;
+
     protected BaseServiceImpl(R repo) {
         this.repo = repo;
     }

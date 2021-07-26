@@ -12,6 +12,6 @@ public class Channels extends BaseEntity {
     private String image;
     private Boolean active;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     List<OrderDetails> orders;
 }

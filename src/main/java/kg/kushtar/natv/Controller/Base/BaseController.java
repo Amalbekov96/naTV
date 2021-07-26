@@ -5,7 +5,7 @@ import kg.kushtar.natv.Model.Mapper.BaseMapper;
 import kg.kushtar.natv.Service.Base.BaseService;
 import org.springframework.web.bind.annotation.*;
 
-public abstract class BaseController <E , S extends BaseService<E>>{
+public abstract class BaseController <E extends BaseEntity, S extends BaseService<E>>{
     private final S service;
 
     protected BaseController(S service) {

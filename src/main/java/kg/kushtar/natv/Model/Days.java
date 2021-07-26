@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-public class Days extends BaseEntity{
+public class Days extends BaseEntity {
 
     @ManyToOne
     private OrderDetails orderDetails;

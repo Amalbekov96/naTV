@@ -7,7 +7,8 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-public class Discounts extends BaseEntity{
+public class Discounts extends BaseEntity {
+
     @ManyToOne
     private Channels channel;
     private double percent;

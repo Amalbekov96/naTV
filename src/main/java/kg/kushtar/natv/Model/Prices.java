@@ -7,9 +7,9 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-public class Prices extends BaseEntity{
+public class Prices extends BaseEntity {
 
-    @ManyToOne
+    @OneToOne
     private Channels channel;
     private LocalDateTime startDate;
     private LocalDateTime endDate;

@@ -20,6 +20,6 @@ public class Orders extends BaseEntity{
     private LocalDateTime addDate;
     private LocalDateTime editDate;
     private Orderstatus status;
-    @OneToMany(mappedBy = "channel")
+    @OneToMany(mappedBy = "channel", cascade = CascadeType.ALL, orphanRemoval = true)
     List<OrderDetails> channels;
 }
