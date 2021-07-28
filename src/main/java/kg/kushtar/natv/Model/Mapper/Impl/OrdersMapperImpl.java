@@ -3,6 +3,7 @@ package kg.kushtar.natv.Model.Mapper.Impl;
 import kg.kushtar.natv.Model.Dto.OrdersDto;
 import kg.kushtar.natv.Model.Mapper.OrdersMapper;
 import kg.kushtar.natv.Model.Orders;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -26,4 +27,5 @@ public class OrdersMapperImpl implements OrdersMapper {
     public List<OrdersDto> toListDto(List<Orders> e) {
         return OrdersMapper.INSTANCE.toListDto(e);
     }
+
 }

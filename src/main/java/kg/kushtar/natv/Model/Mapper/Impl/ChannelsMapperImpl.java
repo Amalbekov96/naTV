@@ -3,6 +3,7 @@ package kg.kushtar.natv.Model.Mapper.Impl;
 import kg.kushtar.natv.Model.Channels;
 import kg.kushtar.natv.Model.Dto.ChannelsDto;
 import kg.kushtar.natv.Model.Mapper.ChannelsMapper;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

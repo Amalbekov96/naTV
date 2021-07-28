@@ -3,6 +3,7 @@ package kg.kushtar.natv.Model.Mapper.Impl;
 import kg.kushtar.natv.Model.Discounts;
 import kg.kushtar.natv.Model.Dto.DiscountsDto;
 import kg.kushtar.natv.Model.Mapper.DiscountsMapper;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,4 +29,5 @@ public class DiscountMapperImpl implements DiscountsMapper {
     public List<DiscountsDto> toListDto(List<Discounts> e) {
         return DiscountsMapper.INSTANCE.toListDto(e);
     }
+
 }
