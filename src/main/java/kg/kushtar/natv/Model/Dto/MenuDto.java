@@ -10,13 +10,13 @@ public class MenuDto {
     private Long id;
     private String name;
     private String image;
-    private Prices price;
-    private List<Discounts> discounts;
+    private PricesDto price;
+    private List<DiscountsDto> discounts;
 
     public MenuDto() {
     }
 
-    public MenuDto(Long id, String name, String image, Prices price, List<Discounts> discounts) {
+    public MenuDto(Long id, String name, String image, PricesDto price, List<DiscountsDto> discounts) {
         this.id = id;
         this.name = name;
         this.image = image;

@@ -4,11 +4,11 @@ import kg.kushtar.natv.Model.BaseEntity;
 
 import java.util.List;
 
-public interface BaseService<E extends BaseEntity> {
+public interface BaseService<E, D> {
 
-    E findById(Long id);
+    D findById(Long id);
     void deleteById(Long id);
-    E update(E dto);
-    E create(E dto);
-    List<E> findAll();
+    D update(E e);
+    D create(E e);
+    List<D> findAll();
 }

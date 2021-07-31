@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 public class DiscountsDto {
 
     private Long id;
-    private Channels channel;
     private double percent;
     private LocalDateTime startDate;
     private LocalDateTime endDate;

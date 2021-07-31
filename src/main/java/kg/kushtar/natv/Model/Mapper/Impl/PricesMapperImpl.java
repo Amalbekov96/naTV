@@ -4,9 +4,11 @@ import kg.kushtar.natv.Model.Dto.PricesDto;
 import kg.kushtar.natv.Model.Mapper.PricesMapper;
 import kg.kushtar.natv.Model.Prices;
 import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class PricesMapperImpl implements PricesMapper {
     @Override
     public Prices toEntity(PricesDto pricesDto) {

@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 @Data
 public class PricesDto {
     private Long id;
-    private Channels channel;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private double price;

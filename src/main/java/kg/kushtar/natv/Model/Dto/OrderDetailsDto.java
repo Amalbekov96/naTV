@@ -6,8 +6,9 @@ import lombok.Data;
 
 @Data
 public class OrderDetailsDto {
-    private Orders order;
-    private Channels channel;
+    private Long id;
+    private OrdersDto order;
+    private ChannelsDto channel;
     private double price;
 
 }

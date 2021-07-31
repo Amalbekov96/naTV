@@ -5,7 +5,9 @@ import kg.kushtar.natv.Model.Mapper.BaseMapper;
 import kg.kushtar.natv.Service.Base.BaseService;
 import org.springframework.web.bind.annotation.*;
 
-public abstract class BaseController <E extends BaseEntity, S extends BaseService<E>>{
+import java.util.List;
+
+public abstract class BaseController <E extends BaseEntity, D, S extends BaseService<E, D>>{
     private final S service;
 
     protected BaseController(S service) {
@@ -13,16 +15,17 @@ public abstract class BaseController <E extends BaseEntity, S extends BaseServic
     }
 
     @GetMapping("/findById/{id}")
-    E findById(@PathVariable Long id) {return this.service.findById(id);}
+    D findById(@PathVariable Long id) {return this.service.findById(id);}
 
     @PutMapping("/update")
-    E update(@RequestBody E e){return  this.service.update(e);}
+    D update(@RequestBody E e){return  this.service.update(e);}
 
     @PostMapping("/create")
-    E create(@RequestBody E e){return this.service.create(e);}
+    D create(@RequestBody E e){return this.service.create(e);}
 
     @DeleteMapping("/delete/{id}")
     void delete(@PathVariable Long id){ this.service.deleteById(id);}
 
-
+    @GetMapping("/findAll")
+    List<D> findAll(){ return this.service.findAll();}
 }

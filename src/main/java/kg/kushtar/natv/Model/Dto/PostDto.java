@@ -12,5 +12,5 @@ public class PostDto {
     private String phone;
     private String email;
     private double total_price;
-    List<Channels> channels;
+    List<PostChannelsDto> channels;
 }

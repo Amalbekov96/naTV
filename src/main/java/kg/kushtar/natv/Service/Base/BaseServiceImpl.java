@@ -1,32 +1,28 @@
 package kg.kushtar.natv.Service.Base;
 
+import kg.kushtar.natv.Exception.EntityNotFound;
 import kg.kushtar.natv.Model.BaseEntity;
+import kg.kushtar.natv.Model.Mapper.BaseMapper;
 import kg.kushtar.natv.Repository.BaseRepo;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public abstract class BaseServiceImpl<E extends BaseEntity,R extends BaseRepo<E>> implements BaseService<E>{
+public class BaseServiceImpl<E extends BaseEntity, D , M extends BaseMapper<E, D>,R extends BaseRepo<E>> implements BaseService<E, D> {
 
-    private final R repo;
+    private R repo;
+    private M mapper;
 
-    protected BaseServiceImpl(R repo) {
+    public BaseServiceImpl(R repo, M mapper) {
         this.repo = repo;
+        this.mapper = mapper;
+    }
+
+    public BaseServiceImpl() {
     }
 
     @Override
-    public E create(E dto) {
-        return repo.save(dto);
-    }
-
-    @Override
-    public E findById(Long id) {
-        return repo.findById(id).orElseThrow(()-> new RuntimeException("Not found!"));
-    }
-
-    @Override
-    public E update(E dto) {
-        return repo.save(dto);
+    public D findById(Long id) {
+        return mapper.toDto( repo.findById(id).orElseThrow(()-> new EntityNotFound("Was not found sorry")));
     }
 
     @Override
@@ -35,7 +31,17 @@ public abstract class BaseServiceImpl<E extends BaseEntity,R extends BaseRepo<E>
     }
 
     @Override
-    public List<E> findAll() {
-        return repo.findAll();
+    public D update(E e) {
+        return mapper.toDto(repo.save(e));
+    }
+
+    @Override
+    public D create(E e) {
+        return mapper.toDto(repo.save(e));
+    }
+
+    @Override
+    public List<D> findAll() {
+        return mapper.toListDto(repo.findAll());
     }
 }

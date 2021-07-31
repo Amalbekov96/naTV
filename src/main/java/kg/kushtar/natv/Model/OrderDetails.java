@@ -9,12 +9,10 @@ import javax.persistence.*;
 @Table(name = "order_details")
 public class OrderDetails extends BaseEntity {
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "channel_id")
+    @ManyToOne
     private Channels channel;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "order_id")
+    @ManyToOne
     private Orders order;
 
     @Column(name = "price")
